@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미란성 위염 증상과 관리법 — 15년차 약사 가이드</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: #fafaf8;
+    color: #1a1a1a;
+    line-height: 1.7;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  /* HERO */
+  .hero-band {
+    background: #FAECE7;
+    border-radius: 14px;
+    padding: 2rem 2rem 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    color: #993C1D;
+    letter-spacing: .07em;
+    margin-bottom: .5rem;
+  }
+  .hero-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #4A1B0C;
+    line-height: 1.4;
+    margin-bottom: .75rem;
+  }
+  .hero-lead {
+    font-size: 15px;
+    color: #993C1D;
+    line-height: 1.8;
+  }
+
+  /* QUOTE */
+  .quote-block {
+    border-left: 3px solid #F0997B;
+    background: #FDF4F1;
+    padding: 1rem 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+  }
+  .quote-block p {
+    font-size: 15px;
+    color: #712B13;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  /* SECTION */
+  .sec { margin-bottom: 2.75rem; }
+  .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+  }
+  .sec-num {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: #D85A30;
+    color: #FAECE7;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  /* PROSE */
+  .prose {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+  }
+  .prose strong { color: #1a1a1a; font-weight: 600; }
+
+  /* FIGURE */
+  .medical-fig {
+    background: #f4f4f0;
+    border: 0.5px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1.25rem 0;
+  }
+  .fig-caption {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-top: .625rem;
+  }
+
+  /* TWO PILLAR */
+  .two-pillar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 520px) { .two-pillar { grid-template-columns: 1fr; } }
+  .pillar {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 0.5px solid;
+  }
+  .pillar-A { background: #FAECE7; border-color: #F0997B; }
+  .pillar-B { background: #E1F5EE; border-color: #5DCAA5; }
+  .pillar-title { font-size: 14px; font-weight: 700; margin-bottom: .5rem; }
+  .pillar-A .pillar-title { color: #712B13; }
+  .pillar-B .pillar-title { color: #085041; }
+  .pillar p { font-size: 13px; line-height: 1.7; }
+  .pillar-A p { color: #993C1D; }
+  .pillar-B p { color: #0F6E56; }
+
+  /* DRUG ROWS */
+  .drug-list {
+    border: 0.5px solid #ddd;
+    border-radius: 12px;
+    padding: .25rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .drug-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 10px 14px;
+    padding: .875rem 0;
+    border-bottom: 0.5px solid #eee;
+  }
+  .drug-row:last-child { border-bottom: none; }
+  .drug-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 10px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .badge-ppi  { background: #FAECE7; color: #993C1D; }
+  .badge-h2   { background: #FAEEDA; color: #854F0B; }
+  .badge-pro  { background: #E6F1FB; color: #185FA5; }
+  .drug-name  { font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+  .drug-desc  { font-size: 13px; color: #555; line-height: 1.65; }
+  .drug-tip   { font-size: 12px; color: #999; white-space: nowrap; }
+
+  /* INGREDIENT ROWS */
+  .ingredient-list {
+    border: 0.5px solid #ddd;
+    border-radius: 12px;
+    padding: .25rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .ingredient-row {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: .875rem 0;
+    border-bottom: 0.5px solid #eee;
+  }
+  .ingredient-row:last-child { border-bottom: none; }
+  .ing-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    margin-top: 6px; flex-shrink: 0;
+  }
+  .ing-name  { font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 3px; }
+  .ing-desc  { font-size: 13px; color: #555; line-height: 1.65; }
+
+  /* SCIENCE BOX */
+  .science-box {
+    background: #E1F5EE;
+    border: 0.5px solid #5DCAA5;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .science-title {
+    font-size: 13px; font-weight: 700; color: #085041;
+    margin-bottom: .625rem;
+  }
+  .science-body {
+    font-size: 13px; color: #0F6E56; line-height: 1.75;
+  }
+  .science-body strong { color: #085041; font-weight: 700; }
+
+  /* FOOD GRID */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin: 1.25rem 0;
+  }
+  .food-card {
+    background: #fff;
+    border: 0.5px solid #ddd;
+    border-radius: 10px;
+    padding: .875rem;
+    text-align: center;
+  }
+  .food-icon  { font-size: 30px; margin-bottom: .5rem; }
+  .food-name  { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .food-why   { font-size: 12px; color: #666; line-height: 1.55; }
+
+  /* PILLS */
+  .warn-pill {
+    display: inline-block;
+    background: #FAECE7; color: #993C1D;
+    font-size: 12px; font-weight: 600;
+    padding: 2px 10px; border-radius: 10px; margin: 2px 3px;
+  }
+
+  /* CTA */
+  .cta-card {
+    background: #f4f4f0;
+    border: 0.5px solid #ddd;
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .cta-card p { font-size: 15px; color: #555; line-height: 1.8; }
+  .cta-card strong { color: #0F6E56; font-weight: 700; }
+
+  /* NOTE */
+  .note {
+    font-size: 12px; color: #aaa; line-height: 1.65;
+    margin-top: 2rem; padding-top: 1rem;
+    border-top: 0.5px solid #ddd;
+  }
+
+  /* SVG */
+  svg { display: block; width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero-band">
+    <div class="hero-eyebrow">15년차 약사의 위장 건강 가이드</div>
+    <h1 class="hero-title">미란성 위염, 살이 '까진' 위를<br>어떻게 회복시킬까</h1>
+    <p class="hero-lead">내시경 결과지에 '미란(erosion)'이라는 단어가 보인다면 — 단순 염증이 아니라 위벽이 실제로 벗겨진 상태입니다. 오늘은 약사 시각으로 "왜 생겼는지"보다 <strong>"어떻게 낫는지"</strong>를 중심으로 정리해드릴게요.</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="sec">
+    <div class="sec-label">
+      <div class="sec-num">1</div>
+      <h2 class="sec-title">미란성 위염이란 — 정의</h2>
+    </div>
+    <p class="prose"><strong>미란(erosion)</strong>이란 점막 표층이 탈락·침식된 상태를 말합니다. 피부로 비유하면 긁혀서 살이 얕게 벗겨진 것과 비슷합니다. 근육층까지 파고들지는 않지만 그 위에 있는 점막 상피가 없어진 상태이기 때문에, 위산이 닿으면 곧바로 통증과 출혈이 생깁니다.</p>
+
+    <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="정상 점막과 미란성 위염 단면 비교도">
+      <defs>
+        <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <text x="170" y="28" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14" font-weight="600" fill="#4A1B0C" text-anchor="middle">정상 점막</text>
+      <text x="510" y="28" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14" font-weight="600" fill="#4A1B0C" text-anchor="middle">미란성 위염</text>
+      <rect x="40"  y="40" width="260" height="22" rx="3" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text x="170" y="55" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#085041" text-anchor="middle">점막 상피층 (온전)</text>
+      <rect x="40"  y="64" width="260" height="18" rx="3" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text x="170" y="77" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#0F6E56" text-anchor="middle">점막 고유층</text>
+      <rect x="40"  y="84" width="260" height="14" rx="3" fill="#B4B2A9" stroke="#888780" stroke-width="0.5"/>
+      <text x="170" y="95" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#2C2C2A" text-anchor="middle">점막근층</text>
+      <rect x="40"  y="100" width="260" height="60" rx="3" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text x="170" y="135" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#444441" text-anchor="middle">점막하층 · 근육층</text>
+      <rect x="380" y="40" width="260" height="22" rx="3" fill="#F5C4B3" stroke="#D85A30" stroke-width="0.5"/>
+      <path d="M430 62 Q460 48 490 62 Q520 48 550 62 Q575 48 610 58" fill="none" stroke="#993C1D" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="510" y="55" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#712B13" text-anchor="middle">점막 상피 결손 (미란)</text>
+      <rect x="380" y="64" width="260" height="18" rx="3" fill="#F5C4B3" stroke="#D85A30" stroke-width="0.5"/>
+      <text x="510" y="77" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#712B13" text-anchor="middle">점막 고유층 (충혈·염증)</text>
+      <rect x="380" y="84" width="260" height="14" rx="3" fill="#B4B2A9" stroke="#888780" stroke-width="0.5"/>
+      <text x="510" y="95" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#2C2C2A" text-anchor="middle">점막근층</text>
+      <rect x="380" y="100" width="260" height="60" rx="3" fill="#D3D1C7" stroke="#B4B2A9" stroke-width="0.5"/>
+      <text x="510" y="135" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#444441" text-anchor="middle">점막하층 · 근육층 (비교적 보존)</text>
+      <line x1="330" y1="50" x2="350" y2="50" stroke="#888" stroke-width="1" marker-end="url(#arr2)"/>
+      <text x="40"  y="185" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#085041">✔ 위산 닿아도 보호막이 막아줌</text>
+      <text x="380" y="185" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#993C1D">✘ 위산이 점막 아래 직접 노출 → 통증·출혈</text>
+      <text x="40"  y="202" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#0F6E56">✔ 점막 보호막 정상 작동</text>
+      <text x="380" y="202" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#712B13">✘ 방치 시 궤양으로 악화 가능</text>
+    </svg>
+    <p class="fig-caption">▲ 정상 점막(좌)과 미란성 위염(우) 단면 비교 — 상피층이 소실된 부위에 위산이 직접 노출됩니다</p>
+
+    <div class="quote-block">
+      <p>"피부에 긁힌 상처가 있을 때 소독약이 닿으면 따갑듯이, 미란이 생긴 위에 위산이 닿으면 그 자리가 곧바로 쓰라립니다. 그래서 공복에 특히 더 아픈 거예요."</p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="sec">
+    <div class="sec-label">
+      <div class="sec-num">2</div>
+      <h2 class="sec-title">치료의 두 가지 축</h2>
+    </div>
+    <p class="prose">미란성 위염 관리는 결국 이 두 가지로 귀결됩니다. 약이든 식이든 모든 접근은 이 두 방향 중 하나(또는 둘 다)에 해당합니다.</p>
+
+    <div class="two-pillar">
+      <div class="pillar pillar-A">
+        <div class="pillar-title">① 자극을 줄이기</div>
+        <p>위산을 낮추고, 소화 부담을 줄여서 이미 헐어있는 점막이 더 이상 자극받지 않게 한다</p>
+      </div>
+      <div class="pillar pillar-B">
+        <div class="pillar-title">② 상처를 회복하기</div>
+        <p>점막 재생에 필요한 성분을 공급하고, 회복에 도움이 되는 음식으로 치유를 돕는다</p>
+      </div>
+    </div>
+
+    <svg viewBox="0 0 680 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="미란성 위염 치료 방향 흐름도">
+      <rect x="40"  y="20" width="130" height="50" rx="6" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+      <text x="105" y="42" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="600" fill="#712B13" text-anchor="middle">위산 억제</text>
+      <text x="105" y="58" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="#993C1D" text-anchor="middle">PPI · H2차단제</text>
+      <rect x="185" y="20" width="130" height="50" rx="6" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+      <text x="250" y="42" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="600" fill="#712B13" text-anchor="middle">소화 부담 감소</text>
+      <text x="250" y="58" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="#993C1D" text-anchor="middle">브로멜라인 · 아티초크</text>
+      <rect x="370" y="20" width="130" height="50" rx="6" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text x="435" y="42" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="600" fill="#085041" text-anchor="middle">점막 보호</text>
+      <text x="435" y="58" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="#0F6E56" text-anchor="middle">양배추 · 쌀미음</text>
+      <rect x="515" y="20" width="130" height="50" rx="6" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text x="580" y="42" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="600" fill="#085041" text-anchor="middle">점막 재생</text>
+      <text x="580" y="58" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="#0F6E56" text-anchor="middle">비타민 U · 아연</text>
+      <line x1="170" y1="45" x2="185" y2="45" stroke="#F0997B" stroke-width="1"/>
+      <line x1="315" y1="45" x2="340" y2="45" stroke="#888" stroke-width="0.5" stroke-dasharray="4,2"/>
+      <line x1="360" y1="45" x2="370" y2="45" stroke="#5DCAA5" stroke-width="1"/>
+      <line x1="500" y1="45" x2="515" y2="45" stroke="#5DCAA5" stroke-width="1"/>
+      <text x="327" y="50" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14" fill="#888" text-anchor="middle">+</text>
+    </svg>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="sec">
+    <div class="sec-label">
+      <div class="sec-num">3</div>
+      <h2 class="sec-title">① 자극 줄이기 — 위산 억제 약물</h2>
+    </div>
+    <p class="prose">위산이 미란 부위에 닿는 것 자체를 막아야 합니다. 현재 사용되는 약물은 세 종류로, 작용 원리와 강도가 다릅니다.</p>
+
+    <div class="drug-list">
+      <div class="drug-row">
+        <span class="drug-badge badge-ppi">PPI</span>
+        <div>
+          <div class="drug-name">양성자펌프억제제</div>
+          <div class="drug-desc">위산을 만드는 세포의 펌프를 직접 차단. 현재 가장 강력한 제산 효과. 오메프라졸, 란소프라졸, 에소메프라졸 등. 미란성 위염 1차 선택약.</div>
+        </div>
+        <span class="drug-tip">4~8주 복용</span>
+      </div>
+      <div class="drug-row">
+        <span class="drug-badge badge-h2">H2차단제</span>
+        <div>
+          <div class="drug-name">히스타민 수용체 차단제</div>
+          <div class="drug-desc">히스타민 신호를 차단해 위산 분비를 줄임. PPI보다 약하지만 야간 위산 억제에 효과적. 파모티딘, 라니티딘 등.</div>
+        </div>
+        <span class="drug-tip">경증·보조요법</span>
+      </div>
+      <div class="drug-row">
+        <span class="drug-badge badge-pro">위장운동촉진제</span>
+        <div>
+          <div class="drug-name">프로키네틱스</div>
+          <div class="drug-desc">위 내용물을 빠르게 배출시켜 위산과 음식이 오래 머무는 것을 방지. 더부룩함, 구역 동반 시 병용. 돔페리돈, 이토프리드 등.</div>
+        </div>
+        <span class="drug-tip">증상 병용</span>
+      </div>
+    </div>
+
+    <h3 style="font-size:17px;font-weight:700;color:#1a1a1a;margin:2rem 0 .75rem">① 자극 줄이기 — 소화 부담을 낮추는 원료</h3>
+    <p class="prose">약으로 위산을 줄이는 것과 함께, <strong>소화 자체를 쉽게 만들어 위에 머무는 시간과 자극을 줄이는</strong> 접근이 병행되어야 합니다. 특히 소화효소 분비가 저하된 분들에게 효과적입니다.</p>
+
+    <div class="ingredient-list">
+      <div class="ingredient-row">
+        <div class="ing-dot" style="background:#D85A30"></div>
+        <div>
+          <div class="ing-name">브로멜라인 (Bromelain)</div>
+          <div class="ing-desc">파인애플 줄기에서 추출한 단백질 분해 효소. 단백질 소화를 도와 위에서 음식이 머무는 시간을 단축시킵니다. 동시에 항염 작용이 있어 점막 염증 완화에도 관여합니다. 소화 부담과 자극, 두 가지를 함께 줄여주는 원료입니다.</div>
+        </div>
+      </div>
+      <div class="ingredient-row">
+        <div class="ing-dot" style="background:#1D9E75"></div>
+        <div>
+          <div class="ing-name">아티초크 (Artichoke)</div>
+          <div class="ing-desc">담즙 분비를 촉진하는 Cynarin 성분 함유. 지방 소화를 도와 위에서 지방이 정체되는 것을 방지합니다. 지방이 오래 머물면 위산 분비가 자극되어 미란 부위를 더 자극하는 악순환이 생기는데, 아티초크는 이 고리를 끊는 역할을 합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="science-box">
+      <div class="science-title">💡 약사 설명 포인트</div>
+      <p class="science-body">양배추즙만으로 미란성 위염을 관리하려는 분들이 많은데, 양배추는 <strong>상처 회복</strong>에 주로 작용합니다. 자극을 줄이는 쪽, 즉 소화 부담을 낮추는 데는 브로멜라인과 아티초크의 역할이 따로 필요합니다. 이 세 가지가 함께 있을 때 비로소 "자극 줄이기 + 상처 회복하기" 두 축이 동시에 채워집니다. <strong>'브로멜라인 호박즙'</strong> 또는 <strong>'아티멜라인 호박즙'</strong>으로 검색하시면 이런 복합 원료 제품을 비교해보실 수 있어요.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="sec">
+    <div class="sec-label">
+      <div class="sec-num" style="background:#1D9E75">4</div>
+      <h2 class="sec-title">② 상처를 회복하기 — 점막을 살리는 음식</h2>
+    </div>
+    <p class="prose">헐어있는 위 점막이 다시 재생되려면 자극을 피하는 것만으로는 부족합니다. 재생에 필요한 성분을 직접 공급해야 합니다.</p>
+
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-icon">🥬</div>
+        <div class="food-name">양배추</div>
+        <div class="food-why">비타민 U(메틸메티오닌)가 위점막 재생을 직접 촉진. 염증 완화에도 유효.</div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon">🍚</div>
+        <div class="food-name">쌀미음</div>
+        <div class="food-why">점성 성분이 점막을 물리적으로 보호. 소화 부담 거의 없음.</div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon">🥚</div>
+        <div class="food-name">달걀 흰자</div>
+        <div class="food-why">고단백 저자극. 점막 세포 재생에 필요한 아미노산 공급.</div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon">🐟</div>
+        <div class="food-name">흰살 생선</div>
+        <div class="food-why">소화 쉬운 단백질 + 아연 공급. 아연은 점막 회복의 필수 미량원소.</div>
+      </div>
+    </div>
+
+    <div class="science-box">
+      <div class="science-title">🔬 쌀미음이 특히 좋은 의학적 이유</div>
+      <p class="science-body">쌀을 오래 끓이면 전분이 가수분해되면서 <strong>아밀로펙틴 기반의 점성 겔(gelatinized starch gel)</strong>이 형성됩니다. 이 끈적한 성분이 위 내벽에 얇은 보호막처럼 코팅되어 위산이 미란 부위에 직접 닿는 것을 물리적으로 차단합니다. 또한 위에서 빠르게 배출되어 체류 시간이 짧고, 소화 과정에서 위산 분비 자극도 거의 없습니다. 임상적으로도 급성 위염·미란 회복기 식이로 죽·미음을 권고하는 것은 이 점성 보호 효과가 근거입니다.</p>
+    </div>
+
+    <svg viewBox="0 0 680 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="쌀미음의 위점막 보호 메커니즘 모식도">
+      <defs>
+        <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <text x="200" y="22" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="600" fill="#712B13" text-anchor="middle">쌀미음 전 (미란 노출)</text>
+      <text x="500" y="22" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="600" fill="#085041" text-anchor="middle">쌀미음 후 (겔 코팅)</text>
+      <rect x="40"  y="32" width="320" height="40" rx="4" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+      <text x="200" y="57" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#633806" text-anchor="middle">위산 (HCl, pH 1~2)</text>
+      <path d="M60 72 Q100 62 140 72 Q180 62 220 72 Q260 62 300 72 Q330 66 340 72" fill="none" stroke="#993C1D" stroke-width="1.5"/>
+      <text x="200" y="90" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="#993C1D" text-anchor="middle">미란 표면 직접 노출 → 통증·출혈</text>
+      <rect x="40"  y="98" width="320" height="50" rx="4" fill="#D3D1C7" stroke="#888780" stroke-width="0.5"/>
+      <text x="200" y="128" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#444441" text-anchor="middle">위 점막 (미란 병변)</text>
+      <rect x="360" y="32" width="280" height="28" rx="4" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+      <text x="500" y="51" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#633806" text-anchor="middle">위산</text>
+      <rect x="360" y="62" width="280" height="16" rx="4" fill="#9FE1CB" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text x="500" y="74" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="#085041" text-anchor="middle">점성 겔 보호막 (amylopectin gel)</text>
+      <path d="M375 78 Q420 68 465 78 Q510 68 555 78 Q590 72 618 78" fill="none" stroke="#0F6E56" stroke-width="1.2"/>
+      <rect x="360" y="98" width="280" height="50" rx="4" fill="#D3D1C7" stroke="#888780" stroke-width="0.5"/>
+      <text x="500" y="128" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#444441" text-anchor="middle">위 점막 (미란 부위 보호됨)</text>
+      <line x1="340" y1="80" x2="360" y2="80" stroke="#5DCAA5" stroke-width="1.5" marker-end="url(#arr3)"/>
+    </svg>
+    <p class="fig-caption" style="margin-top:.5rem">▲ 쌀미음의 점성 겔이 미란 부위와 위산 사이에 물리적 보호막을 형성합니다</p>
+
+    <p class="prose" style="margin-top:1rem">피해야 할 음식도 명확합니다. <span class="warn-pill">맵고 짠 자극성 음식</span> <span class="warn-pill">커피·탄산음료</span> <span class="warn-pill">술</span> <span class="warn-pill">고지방 튀김류</span> — 이들은 위산 분비를 직접 자극하거나 점막 보호막을 손상시킵니다.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="sec">
+    <div class="sec-label">
+      <div class="sec-num" style="background:#378ADD">5</div>
+      <h2 class="sec-title">일상 관리 체크포인트</h2>
+    </div>
+
+    <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="미란성 위염 일상 관리 4영역">
+      <rect x="40"  y="20" width="140" height="165" rx="8" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+      <text x="110" y="44" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="700" fill="#712B13" text-anchor="middle">식사</text>
+      <text x="110" y="64"  font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#993C1D" text-anchor="middle">소량씩 자주</text>
+      <text x="110" y="82"  font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#993C1D" text-anchor="middle">쌀미음·죽 위주</text>
+      <text x="110" y="100" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#993C1D" text-anchor="middle">취침 3h 전 금식</text>
+      <text x="110" y="118" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#993C1D" text-anchor="middle">커피·술 자제</text>
+      <text x="110" y="136" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#993C1D" text-anchor="middle">맵고 짠 음식 제한</text>
+      <rect x="197" y="20" width="140" height="165" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+      <text x="267" y="44" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="700" fill="#085041" text-anchor="middle">생활습관</text>
+      <text x="267" y="64"  font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#0F6E56" text-anchor="middle">식후 20분 산책</text>
+      <text x="267" y="82"  font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#0F6E56" text-anchor="middle">수면 7~8시간</text>
+      <text x="267" y="100" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#0F6E56" text-anchor="middle">스트레스 관리</text>
+      <text x="267" y="118" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#0F6E56" text-anchor="middle">금연</text>
+      <text x="267" y="136" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#0F6E56" text-anchor="middle">식후 즉시 눕지 않기</text>
+      <rect x="354" y="20" width="140" height="165" rx="8" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+      <text x="424" y="44" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="700" fill="#633806" text-anchor="middle">약물</text>
+      <text x="424" y="64"  font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#854F0B" text-anchor="middle">처방 PPI 규칙 복용</text>
+      <text x="424" y="82"  font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#854F0B" text-anchor="middle">임의 중단 금지</text>
+      <text x="424" y="100" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#854F0B" text-anchor="middle">NSAIDs 주의</text>
+      <text x="424" y="118" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#854F0B" text-anchor="middle">아스피린 복용 시 상담</text>
+      <text x="424" y="136" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#854F0B" text-anchor="middle">제산제 보조 가능</text>
+      <rect x="511" y="20" width="140" height="165" rx="8" fill="#E6F1FB" stroke="#85B7EB" stroke-width="0.5"/>
+      <text x="581" y="44" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" font-weight="700" fill="#0C447C" text-anchor="middle">추적검사</text>
+      <text x="581" y="64"  font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#185FA5" text-anchor="middle">6~12개월 내 재검</text>
+      <text x="581" y="82"  font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#185FA5" text-anchor="middle">혈변 시 즉시 내원</text>
+      <text x="581" y="100" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#185FA5" text-anchor="middle">체중감소 동반 주의</text>
+      <text x="581" y="118" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#185FA5" text-anchor="middle">H.pylori 검사 권장</text>
+      <text x="581" y="136" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="12" fill="#185FA5" text-anchor="middle">증상 악화 즉시 재진</text>
+    </svg>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-card">
+    <p>미란성 위염은 "자극 줄이기 + 상처 회복하기" 두 가지를 동시에 진행해야 빠르게 나아집니다. 위산 억제 약물로 자극을 차단하고, 쌀미음·양배추로 점막을 회복시키면서, 소화 부담을 줄이는 <strong>브로멜라인과 아티초크를 병행</strong>하면 더 체계적인 관리가 됩니다. 도움이 되셨다면 이웃추가 후 다음 포스팅도 함께 봐주세요 🙏</p>
+  </div>
+
+  <p class="note">※ 본 콘텐츠는 15년 약사 경험에 기반한 건강 정보이며 의학적 진단·처방을 대체하지 않습니다. 혈변·지속적 복통이 있는 경우 반드시 전문의 진료를 받으시기 바랍니다.</p>
+
+</div>
+</body>
+</html>
